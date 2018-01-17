@@ -1,0 +1,39 @@
+.panel-heading {
+    text-align: center;
+}
+.bunches{
+
+    width: 30%;
+    background-color:silver;
+    display: inline-block;
+    color: white;
+    border-right: 2px solid black;
+}
+.templates{
+    width: 36%;
+    background-color:#B5C0A9;
+    display: inline-block;
+    color: white;
+    border-right: 2px solid black;
+}
+.campaign{
+    width: 30%;
+    background-color:silver;
+    display: inline-block;
+    color: white;
+}
+.menu{
+    width: 100%;
+}
+.substablehead td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+.substable{
+    margin: 15px;
+}
+.subscontent td{
+    border: 1px solid black;
+    padding: 10px;
+}
