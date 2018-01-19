@@ -24,7 +24,10 @@
                              </tr>
 
                                 @foreach($subscriber as $item)
-                                <tr>
+                                <tr style="background-color:#f9f9f9;"
+                                    onMouseOver="this.style.backgroundColor='white';"
+                                    onMouseOut="this.style.backgroundColor='#f9f9f9'"
+                                    onclick="location.href='/bunches/{{$bunch->id}}/subscribers/{{$item->id}}'">
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->surname}}</td>
                                     <td>{{$item->email}}</td>

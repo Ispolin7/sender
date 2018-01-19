@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/campaign/send', 'SendMailController@send');
+Route::get('/campaign/{campaign}/send', 'SendMailController@send');
 Route::resource('bunches', 'BunchController');
 Route::resource('templates', 'TemplatController');
 Route::prefix('bunches/{bunch}')->group(function () {

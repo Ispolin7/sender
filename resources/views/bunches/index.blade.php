@@ -24,7 +24,10 @@
                             </tr>
 
                             @foreach($bunch as $item)
-                                <tr>
+                                <tr style="background-color:#f9f9f9;"
+                                    onMouseOver="this.style.backgroundColor='white';"
+                                    onMouseOut="this.style.backgroundColor='#f9f9f9'"
+                                    onclick="location.href='/bunches/{{$item->id}}'">
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->description}}</td>
                                     <td>{{$subscriber = DB::table('subscribers')->where('bunches_id', $item->id)->count()}}</td>

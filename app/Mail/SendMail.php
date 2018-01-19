@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Model\Subscriber;
+use App\Model\Template;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -11,14 +13,16 @@ class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $template;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Template $template)
     {
-        //
+        $this->template = $template;
+
     }
 
     /**
@@ -28,6 +32,10 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.preview');
+        return $this->view('mail.mail')
+            ->with([
+                'template' => $this->template
+            ]);
+
     }
 }

@@ -21,6 +21,7 @@ class CreateSubscribersTable extends Migration
             $table->timestamps();
             $table->integer('bunches_id')->unsigned();
             $table->integer('created_id')->unsigned();
+            $table->softDeletes();
 
         });
     }

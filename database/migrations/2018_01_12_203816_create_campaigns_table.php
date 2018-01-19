@@ -21,6 +21,7 @@ class CreateCampaignsTable extends Migration
             $table->integer('bunch_id')->unsigned();
             $table->integer('template_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

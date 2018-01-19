@@ -6,6 +6,7 @@
         </div>
     </div>
     <div class="panel-body">
+
         {!! Form::model($subscriber, ['route' => ['subscribers.update', $bunch->id, $subscriber->id], 'method' => 'PUT']) !!}
 
         @include('subscribers._form')

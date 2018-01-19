@@ -23,7 +23,10 @@
                             </tr>
 
                             @foreach($template as $item)
-                                <tr>
+                                <tr style="background-color:#f9f9f9;"
+                                    onMouseOver="this.style.backgroundColor='white';"
+                                    onMouseOut="this.style.backgroundColor='#f9f9f9'"
+                                    onclick="location.href='/templates/{{$item->id}}'">
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->content}}</td>
                                     <td>

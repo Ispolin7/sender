@@ -5,11 +5,12 @@ namespace App\Model;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\User;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Bunch extends Model
 {
-    use Selectable;
+    use Selectable, SoftDeletes;
 
     protected $fillable = [
         'name',

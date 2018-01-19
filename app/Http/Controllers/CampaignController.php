@@ -54,12 +54,12 @@ class CampaignController extends Controller
     {
         $subscriber = Subscriber::latest()->owned()->get();
         $template = Template::latest()->owned()->get();
-        return view('mail.show', compact('campaign','subscriber','template'));
-    }
 
-    public function preview(Campaign $campaign)
-    {
-        return view('campaign.show', compact('campaign'));
+        if ($campaign['created_id'] === Auth::user()->id) {
+            return view('mail.show', compact('campaign', 'subscriber', 'template'));
+        } else {
+            echo 'Sorry, but you can not perform this action';
+        }
     }
 
     /**
@@ -70,13 +70,13 @@ class CampaignController extends Controller
      */
     public function edit($id)
     {
-        $campaign =Campaign::findOrFail($id);
-        if($campaign['created_id'] === Auth::user()->id){
-        return view('campaign.edit', compact('campaign'));
-        }
-        else{
+        $campaign = Campaign::findOrFail($id);
+        if ($campaign['created_id'] === Auth::user()->id) {
+            return view('campaign.edit', compact('campaign'));
+        } else {
             echo 'Sorry, but you can not perform this action';
-    }}
+        }
+    }
 
     /**
      * Update the specified resource in storage.

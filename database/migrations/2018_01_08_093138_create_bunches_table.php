@@ -19,6 +19,7 @@ class CreateBunchesTable extends Migration
             $table->string('description');
             $table->timestamps();
             $table->integer('created_id')->unsigned();
+            $table->softDeletes();
         });
     }
 

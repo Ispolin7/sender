@@ -7,7 +7,7 @@
     </div>
     <div class="panel-body">
         {!! Form::open(['route'=>'subscribers.store', ['bunch' => $bunch->id]]) !!}
-
+        {!!Form::hidden('bunches_id', $bunch->id) !!}
         @include('subscribers._form')
 
         <div class="form-group">

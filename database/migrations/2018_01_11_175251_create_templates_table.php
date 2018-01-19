@@ -19,6 +19,7 @@ class CreateTemplatesTable extends Migration
             $table->string('content');
             $table->integer('created_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

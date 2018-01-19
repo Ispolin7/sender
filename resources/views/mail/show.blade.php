@@ -45,7 +45,7 @@
                 </td>
             </tr>
             <tr>
-                <td><a class="btn btn-info" href="{{url('/campaign/send')}}">link</a></td>
+                <td><a class="btn btn-danger" href="/campaign/{{$campaign -> id}}/send">Send mails</a></td>
             </tr>
         </table>
     </div>

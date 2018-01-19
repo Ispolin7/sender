@@ -50,9 +50,13 @@ class SubscriberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bunch $bunch, Subscriber $subscriber)
     {
-        //
+        if ($subscriber['created_id'] === Auth::user()->id) {
+            return view('subscribers.show', compact('subscriber', 'bunch'));
+        } else {
+            echo 'Sorry, but you can not perform this action';
+        }
     }
 
     /**
@@ -63,8 +67,12 @@ class SubscriberController extends Controller
      */
     public function edit(Bunch $bunch, $id)
     {
-        $subscriber =Subscriber::findOrFail($id);
-        return view('subscribers.edit', compact('bunch','subscriber'));
+        $subscriber = Subscriber::findOrFail($id);
+        if ($subscriber['created_id'] === Auth::user()->id) {
+            return view('subscribers.edit', compact('bunch', 'subscriber'));
+        } else {
+            echo 'Sorry, but you can not perform this action';
+        }
     }
 
     /**

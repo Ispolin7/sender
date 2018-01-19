@@ -49,9 +49,13 @@ class BunchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Bunch $bunch)
     {
-        //
+        if ($bunch['created_id'] === Auth::user()->id) {
+            return view('bunches.show', compact('bunch'));
+        } else {
+            echo 'Sorry, but you can not perform this action';
+        }
     }
 
     /**
